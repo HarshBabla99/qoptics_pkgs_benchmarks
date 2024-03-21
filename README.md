@@ -1,10 +1,15 @@
-# Benchmarks for quantum-optics frameworks
+# Benchmarks for popular quantum-optics frameworks
+
+> [!NOTE]  
+> This is a fork of the repo linked below, which carefully implemented the benchmarks in QuTiP and QuantumOptics.jl
+> I simply copied and reworked some of the code to work with dynamiqs.
+> https://github.com/qojulia/QuantumOptics.jl-benchmarks
+
 
 This repository collects a set of examples which can be used to compare different numerical quantum optics frameworks. The aim is to create implementations for the following frameworks:
-* Quantum Optics Toolbox (Matlab)
+* Dynamiqs (Python)
 * QuTiP (Python)
 * QuantumOptics.jl (Julia)
-* C++QED (No example implemented at the moment)
 
 
 ## Performing the benchmarks
@@ -23,14 +28,6 @@ Especially for julia, one still has to set the users home directory:
 ### Running the benchmarks
 
 Now one can either manually run benchmarks of interest by simply executing the benchmark file or alternatively use the `runall.py` script to run them all automatically.
-
-
-### Export data to website
-
-After the benchmarks have been performed simply run:
-
-`julia make.jl`
-
 
 ## More information to this repository
 

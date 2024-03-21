@@ -7,3 +7,4 @@ sourcecode/
 __pycache__/
 *.py[cod]
 *$py.class
+_trash
