@@ -13,7 +13,7 @@ def setup(N):
     options = qt.Options()
     options.atol = 1e-8
     options.rtol = 1e-6
-    options.rhs_reuse = True
+    # options.rhs_reuse = True
     return options
 
 
@@ -48,8 +48,8 @@ def f(N, options):
     ]
 
     psi0 = qt.tensor(qt.fock(N, 0), (qt.basis(2, 0) + qt.basis(2, 1)).unit())
-    exp_asp = qt.mesolve(H, psi0, tspan, c_ops, [qt.tensor(a, sp)], options=options).expect[0]
-    return np.real(exp_asp)
+    exp_n = qt.mesolve(H, psi0, tspan, c_ops, [qt.tensor(a, sp)], options=options).expect[0]
+    return np.real(exp_n)
 
 
 print("Benchmarking:", name)

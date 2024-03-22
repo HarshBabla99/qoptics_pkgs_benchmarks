@@ -25,7 +25,7 @@ def check(name, D, eps=1e-5):
     check_path = "../checks/" + examplename(name) + ".json"
     
     if exists(check_path):
-        print("Checking against check file.")
+        print("\t Checking against check file.")
 
         f = open(check_path)
         data = json.load(f)
@@ -35,9 +35,9 @@ def check(name, D, eps=1e-5):
                 print("Warning: Result may be incorrect in", name, ": ", result, "<->", r)
 
     else:
-        print("No check file found - write results to check file.")
+        print("\t No check file found - write results to check file.")
         f = open(check_path, "w")
-        json.dump(results, f)
+        json.dump(D, f)
         f.close()
 
 def save(name, results):

@@ -7,7 +7,8 @@ output_path = "results/specs.json"
 specs = {}
 
 print("Running lspcu ...")
-data = subprocess.check_output(["lscpu"])
+# data = subprocess.check_output(["lscpu"])
+data = subprocess.check_output(["sysctl hw"])
 cpuinfo = data.decode(sys.getdefaultencoding())
 cpuspecs = []
 specs["cpu"] = cpuspecs
@@ -18,18 +19,18 @@ for line in cpuinfo.split("\n"):
         cpuspecs.append((key, value.strip()))
 
 
-print("Getting julia specs ...")
-data = subprocess.check_output(["julia", "-e", "import InteractiveUtils; InteractiveUtils.versioninfo()"])
-juliainfo = data.decode(sys.getdefaultencoding())
-juliaspecs = []
-specs["julia"] = juliaspecs
-
-for line in juliainfo.split("\n"):
-    if line:
-        juliaspecs.append(line.strip())
+# print("Getting julia specs ...")
+# data = subprocess.check_output(["julia", "-e", "import InteractiveUtils; InteractiveUtils.versioninfo()"])
+# juliainfo = data.decode(sys.getdefaultencoding())
+# juliaspecs = []
+# specs["julia"] = juliaspecs
+# 
+# for line in juliainfo.split("\n"):
+#     if line:
+#         juliaspecs.append(line.strip())
 
 print("Getting qutip specs ...")
-data = subprocess.check_output(["python3", "-c", "import qutip; qutip.about()"])
+data = subprocess.check_output(["python", "-c", "import qutip; qutip.about()"])
 qutipinfo = data.decode(sys.getdefaultencoding())
 qutipspecs = []
 specs["qutip"] = qutipspecs
