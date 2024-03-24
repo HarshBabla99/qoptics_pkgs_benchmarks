@@ -49,13 +49,15 @@ def setup(N):
     options.atol = 1e-8
     options.rtol = 1e-6
     options.num_cpus = 1
+    options.progress_bar = False
 
     return psi0, H, x, J, options
 
 
 def f(psi0, H, x, J, options):
     tlist = np.linspace(0, 10, 11)
-    exp_x = qt.mcsolve(H, psi0, tlist, J, [x], ntraj=evals, options=options).expect[0]
+    exp_x = qt.mcsolve(H, psi0, tlist, J, [x], ntraj=evals, options=options,
+                       progress_bar = False).expect[0]
     return np.real(exp_x)
 
 

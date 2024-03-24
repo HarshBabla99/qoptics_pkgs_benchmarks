@@ -5,7 +5,7 @@ import benchmarkutils
 name = "displace"
 
 samples = 3
-evals = 10
+evals = 100
 cutoffs = range(10, 151, 10)
 
 def setup(N):
@@ -22,7 +22,7 @@ results = []
 for N in cutoffs:
     print(N, "", end="", flush=True)
     alpha = setup(N)
-    checks[N] = qt.expect(qt.destroy(N), f(N, alpha))
+    checks[N] = np.real(qt.expect(qt.destroy(N), f(N, alpha)))
     t = benchmarkutils.run_benchmark(f, N, alpha, samples=samples, evals=evals)
     results.append({"N": N, "t": t})
 print()

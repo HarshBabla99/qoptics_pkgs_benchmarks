@@ -5,8 +5,8 @@ import benchmarkutils
 name = "timeevolution_master_timedependent_cavity[cython]"
 
 samples = 3
-evals = 1
-cutoffs = range(10, 151, 10)
+evals = 6
+cutoffs = range(10, 141, 10)
 
 
 def setup(N):

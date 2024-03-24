@@ -45,7 +45,8 @@ def f(N, options):
     ]
 
     psi0 = qt.tensor(qt.fock(N, 0), (qt.basis(2, 0) + qt.basis(2, 1)).unit())
-    exp_n = qt.mcsolve(H, psi0, tspan, c_ops, [qt.tensor(n, Ia)], ntraj=evals, options=options).expect[0]
+    exp_n = qt.mcsolve(H, psi0, tspan, c_ops, [qt.tensor(n, Ia)], ntraj=evals, options=options, 
+                       progress_bar = False).expect[0]
     return np.real(exp_n)
 
 

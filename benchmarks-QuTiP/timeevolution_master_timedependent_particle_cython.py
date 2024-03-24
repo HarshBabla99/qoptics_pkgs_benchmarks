@@ -5,7 +5,7 @@ import benchmarkutils
 name = "timeevolution_master_timedependent_particle[cython]"
 
 samples = 3
-evals = 1
+evals = 6
 cutoffs = range(5, 41, 5)
 
 

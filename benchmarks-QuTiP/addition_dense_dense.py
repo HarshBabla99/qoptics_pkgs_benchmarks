@@ -4,7 +4,7 @@ import benchmarkutils
 name = "addition_dense_dense"
 
 samples = 2
-evals = 5
+evals = 100
 cutoffs = range(50, 801, 50)
 
 

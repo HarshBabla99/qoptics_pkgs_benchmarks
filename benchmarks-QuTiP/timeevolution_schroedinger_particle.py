@@ -5,7 +5,7 @@ import benchmarkutils
 name = "timeevolution_schroedinger_particle"
 
 samples = 3
-evals = 1
+evals = 6
 cutoffs = range(25, 301, 25)
 
 

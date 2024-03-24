@@ -5,7 +5,7 @@ import benchmarkutils
 name = "variance_operator"
 
 samples = 5
-evals = 50
+evals = 100
 cutoffs = range(100, 2001, 100)
 
 def setup(N):

@@ -5,7 +5,7 @@ import benchmarkutils
 name = "timeevolution_master_cavity"
 
 samples = 3
-evals = 3
+evals = 6
 cutoffs = range(10, 151, 10)
 
 

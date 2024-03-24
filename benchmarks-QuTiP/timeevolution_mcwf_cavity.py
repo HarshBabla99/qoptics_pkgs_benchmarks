@@ -34,7 +34,8 @@ def f(N, options):
     J = [np.sqrt(kappa) * a]
 
     psi0 = qt.coherent(N, alpha0)
-    exp_n = qt.mcsolve(H, psi0, tspan, J, [n], ntraj=evals, options=options).expect[0]
+    exp_n = qt.mcsolve(H, psi0, tspan, J, [n], ntraj=evals, options=options, 
+                       progress_bar = False).expect[0]
     return np.real(exp_n)
 
 

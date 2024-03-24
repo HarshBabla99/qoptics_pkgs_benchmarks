@@ -5,7 +5,7 @@ import benchmarkutils
 name = "timeevolution_schroedinger_jaynescummings"
 
 samples = 3
-evals = 3
+evals = 6
 cutoffs = range(25, 251, 25)
 
 

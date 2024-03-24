@@ -4,7 +4,7 @@ import benchmarkutils
 name = "multiplication_dense_dense"
 
 samples = 2
-evals = 5
+evals = 100
 cutoffs = range(50, 601, 50)
 
 

@@ -1,9 +1,8 @@
 import os
 import json
-import pylab
+import matplotlib.pyplot as plt
 
 sourcedir = "results-collected"
-
 
 def transform_version(points):
     Nvec = []
@@ -24,6 +23,7 @@ def transform_json(d):
 
 testnames = os.listdir(sourcedir)
 for testname in testnames:
+    print(testname)
     if testname.startswith("."):
         continue
     # if not "ptrace" in testname:
@@ -33,12 +33,14 @@ for testname in testnames:
     d = json.load(f)
     f.close()
     data = transform_json(d)
-    pylab.figure()
+    
     for name, points in data:
-        pylab.title(testname)
-        pylab.plot(points[0], points[1], label=name)
-        pylab.plot(points[0], points[1], "ok", alpha=0.4)
-    pylab.legend()
-pylab.show()
+        plt.title(testname)
+        plt.plot(points[0], points[1], label=name)
+        plt.plot(points[0], points[1], "ok", alpha=0.4)
+
+    plt.legend()
+    plt.savefig(f'plots/{testname}.png')
+    plt.show()
 
 

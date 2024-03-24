@@ -5,7 +5,7 @@ import benchmarkutils
 basename = "multiplication_sparse_dense"
 
 samples = 2
-evals = 5
+evals = 100
 cutoffs = range(50, 1001, 50)
 S = [0.1, 0.01, 0.001]
 Nrand = 5

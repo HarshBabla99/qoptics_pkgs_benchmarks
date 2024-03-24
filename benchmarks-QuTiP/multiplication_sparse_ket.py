@@ -5,7 +5,7 @@ import benchmarkutils
 basename = "multiplication_sparse_ket"
 
 samples = 2
-evals = 5
+evals = 100
 cutoffs = range(100, 1001, 100)
 S = [0.1, 0.01, 0.001]
 Nrand = 5
