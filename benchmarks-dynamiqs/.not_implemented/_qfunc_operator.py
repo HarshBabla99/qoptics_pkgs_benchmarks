@@ -1,8 +1,8 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
-name = "wigner_operator"
+name = "qfunc_operator"
 
 samples = 3
 evals = 5
@@ -10,14 +10,14 @@ cutoffs = range(10, 101, 10)
 
 def setup(N):
     alpha = 0.7
-    xvec = np.linspace(-50, 50, 100)
-    yvec = np.linspace(-50, 50, 100)
+    xvec = np.linspace(-50, 50, 101)
+    yvec = np.linspace(-50, 50, 101)
     state = qt.coherent(N, alpha)
     op = state*state.dag()
     return op, xvec, yvec
 
 def f(state, xvec, yvec):
-    return qt.wigner(state, xvec, yvec)
+    return qt.qfunc(state, xvec, yvec)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)

@@ -1,19 +1,19 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
-name = "displace"
+name = "coherentstate"
 
-samples = 3
+samples = 5
 evals = 100
-cutoffs = range(10, 151, 10)
+cutoffs = range(50, 501, 50)
 
 def setup(N):
-    alpha = np.log(N)
+    alpha = jnp.log(N)
     return alpha
 
 def f(N, alpha):
-    return qt.displace(N, alpha)
+    return dq.coherent(N, alpha)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)
@@ -22,7 +22,7 @@ results = []
 for N in cutoffs:
     print(N, "", end="", flush=True)
     alpha = setup(N)
-    checks[N] = np.real(qt.expect(qt.destroy(N), f(N, alpha)))
+    checks[N] = float(jnp.real(dq.expect(dq.destroy(N), f(N, alpha))))
     t = benchmarkutils.run_benchmark(f, N, alpha, samples=samples, evals=evals)
     results.append({"N": N, "t": t})
 print()

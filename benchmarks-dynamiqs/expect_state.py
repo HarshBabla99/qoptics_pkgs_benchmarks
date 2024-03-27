@@ -1,20 +1,20 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
-name = "variance_state"
+name = "expect_state"
 
 samples = 5
 evals = 100
-cutoffs = range(5000, 100001, 5000)
+cutoffs = range(5000, 150001, 5000)
 
 def setup(N):
-    op = (qt.destroy(N) + qt.create(N))
-    psi = qt.Qobj(np.ones(N, complex)/(N**(1/2)))
+    op = (dq.destroy(N) + dq.create(N))
+    psi = jnp.ones(N, complex)/jnp.sqrt(N)
     return op, psi
 
 def f(op, psi):
-    return qt.variance(op, psi)
+    return dq.expect(op, psi)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)

@@ -1,12 +1,12 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
-name = "timeevolution_master_cavity"
+name = "timeevolution_schroedinger_cavity"
 
 samples = 3
 evals = 6
-cutoffs = range(10, 151, 10)
+cutoffs = range(50, 501, 50)
 
 
 def setup(N):
@@ -17,7 +17,6 @@ def setup(N):
 
 
 def f(N, options):
-    kappa = 1.
     eta = 1.5
     wc = 1.8
     wl = 2.
@@ -30,10 +29,9 @@ def f(N, options):
     n = at * a
 
     H = delta_c*n + eta*(a + at)
-    J = [np.sqrt(kappa) * a]
 
     psi0 = qt.coherent(N, alpha0)
-    exp_n = qt.mesolve(H, psi0, tspan, J, [n], options=options).expect[0]
+    exp_n = qt.mesolve(H, psi0, tspan, [], [n], options=options).expect[0]
     return np.real(exp_n)
 
 

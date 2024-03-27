@@ -1,5 +1,5 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
 name = "expect_operator"
@@ -9,13 +9,12 @@ evals = 100
 cutoffs = range(100, 2501, 100)
 
 def setup(N):
-    op = (qt.destroy(N) + qt.create(N))
-    psi = qt.Qobj(np.ones(N, complex)/(N**(1/2)))
-    rho = psi*psi.dag()
+    op = (dq.destroy(N) + dq.create(N))
+    psi = dq.todm(jnp.ones(N, complex))/N
     return op, rho
 
 def f(op, rho):
-    return qt.expect(op, rho)
+    return dq.expect(op, rho)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)

@@ -4,9 +4,9 @@ import dynamiqs as dq
 import jax.numpy as jnp
 from os.path import exists
 
-benchmark_directory = "benchmarks-QuTiP"
-commitID = qutip.version.version
-result_path = "../results/results-QuTiP-{}-{}.json"
+benchmark_directory = "benchmarks-dynamiqs"
+commitID = dq.__version__
+result_path = "../results/results-dynamiqs-{}-{}.json"
 
 def examplename(name):
     if name.endswith("]"):
@@ -31,7 +31,7 @@ def check(name, D, eps=1e-5):
         data = json.load(f)
         for (N, result) in D.items():
             r = data[str(N)]
-            if np.isnan(result) or abs(result-r)/abs(r) > eps:
+            if jnp.isnan(result) or abs(result-r)/abs(r) > eps:
                 print("Warning: Result may be incorrect in", name, ": ", result, "<->", r)
 
     else:

@@ -1,30 +1,25 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
-name = "timeevolution_master_timedependent_jaynescummings[cython]"
+name = "timeevolution_schroedinger_jaynescummings"
 
 samples = 3
 evals = 6
-cutoffs = range(5, 81, 5)
+cutoffs = range(25, 251, 25)
 
 
 def setup(N):
     options = qt.Options()
     options.atol = 1e-8
     options.rtol = 1e-6
-    # options.rhs_reuse = True
     return options
 
 
 def f(N, options):
     wa = 1
-    wc = 0.9
-    delta = wa - wc
+    wc = 1
     g = 2
-    kappa = 0.5
-    gamma = 0.1
-    n_th = 0.75
     tspan = np.linspace(0, 10, 11)
 
     Ia = qt.qeye(2)
@@ -32,24 +27,17 @@ def f(N, options):
 
     a = qt.destroy(N)
     at = qt.create(N)
+    n = at * a
 
     sm = qt.sigmam()
     sp = qt.sigmap()
+    sz = qt.sigmaz()
 
-    # H = wc*qt.tensor(n, Ia) + qt.tensor(Ic, wa/2.*sz) + g*(qt.tensor(at, sm) + qt.tensor(a, sp))
-    Ha = g * qt.tensor(at, sm)
-    Hb = g * qt.tensor(a, sp)
-    H = [[Ha, 'exp(-1j* {delta}*t)'.format(delta=delta)],
-         [Hb, 'exp(1j*{delta}*t)'.format(delta=delta)]]
-    c_ops = [
-        qt.tensor(np.sqrt(kappa*(1+n_th)) * a, Ia),
-        qt.tensor(np.sqrt(kappa*n_th) * at, Ia),
-        qt.tensor(Ic, np.sqrt(gamma) * sm),
-    ]
+    H = wc*qt.tensor(n, Ia) + qt.tensor(Ic, wa/2.*sz) + g*(qt.tensor(at, sm) + qt.tensor(a, sp))
 
     psi0 = qt.tensor(qt.fock(N, 0), (qt.basis(2, 0) + qt.basis(2, 1)).unit())
-    exp_n = qt.mesolve(H, psi0, tspan, c_ops, [qt.tensor(a, sp)], options=options).expect[0]
-    return np.real(exp_n)
+    exp_n = qt.mesolve(H, psi0, tspan, [], [qt.tensor(n, Ia)], options=options).expect[0]
+    return exp_n
 
 
 print("Benchmarking:", name)

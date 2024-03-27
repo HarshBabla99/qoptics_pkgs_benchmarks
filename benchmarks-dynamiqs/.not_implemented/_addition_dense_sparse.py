@@ -1,8 +1,8 @@
 import scipy.sparse as sp
-import numpy as np
+import jax.numpy as jnp
 import benchmarkutils
 
-basename = "addition_sparse_dense"
+basename = "addition_dense_sparse"
 
 samples = 2
 evals = 100
@@ -12,8 +12,8 @@ Nrand = 5
 
 
 def setup(N, s):
-    op1 = sp.rand(N, N, s, dtype=float) * 0.2j
-    op2 = np.random.rand(N, N) * 0.1j
+    op1 = np.random.rand(N, N) * 0.2j
+    op2 = sp.rand(N, N, s, dtype=float) * 0.1j
     return op1, op2
 
 

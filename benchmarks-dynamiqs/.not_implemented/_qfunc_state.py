@@ -1,5 +1,5 @@
-import qutip as qt
-import numpy as np
+import dynamiqs as dq
+import jax.numpy as jnp
 import benchmarkutils
 
 name = "qfunc_state"
