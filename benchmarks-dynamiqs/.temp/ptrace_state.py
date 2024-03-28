@@ -11,8 +11,8 @@ cutoffs = range(2, 16)
 
 def setup(N):
     def create_substate(c0, alpha, N):
-        x = np.linspace(0., 1., N)
-        data = jnp.conj(c0 + alpha * x)
+        x = jnp.linspace(0., 1., N)
+        return jnp.reshape(c0 + alpha * x, (N,1))
 
     psi1 = create_substate(1, 0.2, N)
     psi2 = create_substate(-2, 0.3, N)
@@ -23,7 +23,7 @@ def setup(N):
 
 
 def f(psi, N):
-    return dq.ptrace(psi, (0, 3), (N,N,2,2))
+    return dq.ptrace(psi, 0, (N,N,2,2))
 
 
 print("Benchmarking:", name)
@@ -34,7 +34,7 @@ for N in cutoffs:
     print(N, "", end="", flush=True)
     psi = setup(N)
     checks[N] = jnp.abs(f(psi, N)).sum()
-    t = benchmarkutils.run_benchmark(f, psi, samples=samples, evals=evals)
+    t = benchmarkutils.run_benchmark(f, psi, N, samples=samples, evals=evals)
     results.append({"N": 4 * N**2, "t": t})
 print()
 

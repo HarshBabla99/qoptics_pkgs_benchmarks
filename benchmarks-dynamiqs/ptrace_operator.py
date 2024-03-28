@@ -34,7 +34,7 @@ for N in cutoffs:
     print(N, "", end="", flush=True)
     op = setup(N)
     checks[N] = jnp.abs(f(op, N)).sum()
-    t = benchmarkutils.run_benchmark(f, op, samples=samples, evals=evals)
+    t = benchmarkutils.run_benchmark(f, op, N, samples=samples, evals=evals)
     results.append({"N": 4*N**2, "t": t})
 print()
 

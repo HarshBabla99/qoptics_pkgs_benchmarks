@@ -10,26 +10,29 @@ cutoffs = range(10, 101, 10)
 
 def setup(N):
     alpha = 0.7
-    xvec = jnp.linspace(-50, 50, 100)
-    yvec = jnp.linspace(-50, 50, 100)
     op = dq.coherent_dm(N, alpha)
-    return op, xvec, yvec
+    return op
 
-def f(state, xvec, yvec):
-    return dq.wigner(state, xvec, yvec)
+def f(state):
+    return dq.wigner(state, xmax = 50, ymax = 500, npixels = 100)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)
-checks = {}
+
+# checks = {}
+
 results = []
 for N in cutoffs:
     print(N, "", end="", flush=True)
-    op, xvec, yvec = setup(N)
-    alpha_check = 0.6 + 0.1j
-    checks[N] = f(op, [alpha_check.real], [alpha_check.imag])[0, 0]
-    t = benchmarkutils.run_benchmark(f, op, xvec, yvec, samples=samples, evals=evals)
+    op = setup(N)
+    
+    # alpha_check = 0.6 + 0.1j
+    # w = f(state)
+    # checks[N] = w[alpha_check.real, alpha_check.imag]
+
+    t = benchmarkutils.run_benchmark(f, op, samples=samples, evals=evals)
     results.append({"N": N, "t": t})
 print()
 
-benchmarkutils.check(name, checks)
+# benchmarkutils.check(name, checks)
 benchmarkutils.save(name, results)

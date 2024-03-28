@@ -4,7 +4,8 @@ import warnings
 
 matlabbenchmarks = "benchmarks-QuantumOpticsToolbox"
 juliabenchmarks = "benchmarks-QuantumOptics.jl"
-pythonbenchmarks = "benchmarks-QuTiP"
+qutipbenchmarks = "benchmarks-QuTiP"
+dynamiqsbenchmarks = "benchmarks-dynamiqs"
 
 # subprocess.run(["python", "hardware_specs.py"], check=True)
 
@@ -20,7 +21,15 @@ pythonbenchmarks = "benchmarks-QuTiP"
 # with warnings.catch_warnings():
 #     warnings.simplefilter('ignore')
 # 
-os.chdir(pythonbenchmarks)
+# os.chdir(qutipbenchmarks)
+# filenames = os.listdir(".")
+# for name in filenames:
+#     if "benchmarkutils" in name or not name.endswith(".py"):
+#         continue
+#     subprocess.run(["python", name], check=True)
+# os.chdir("..")
+
+os.chdir(dynamiqsbenchmarks)
 filenames = os.listdir(".")
 for name in filenames:
     if "benchmarkutils" in name or not name.endswith(".py"):

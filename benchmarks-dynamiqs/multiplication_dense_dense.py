@@ -1,5 +1,8 @@
+import dynamiqs as dq
+from jax import random
 import jax.numpy as jnp
 import benchmarkutils
+from jax import jit
 
 name = "multiplication_dense_dense"
 
@@ -7,13 +10,14 @@ samples = 2
 evals = 100
 cutoffs = range(50, 601, 50)
 
-key = jax.random.PRNGKey(42)
+key = random.PRNGKey(42)
 
 def setup(N):
     op1 = dq.rand_dm(key, (N, N)) * 0.2j
     op2 = dq.rand_dm(key, (N, N)) * 0.1j
     return op1, op2
 
+@jit
 def f(op1, op2):
     return op1 @ op2
 
