@@ -11,15 +11,15 @@ cutoffs = range(2, 16)
 
 def setup(N):
     def create_substate(c0, alpha, N):
-        x = jnp.linspace(0., 1., N)
-        return jnp.reshape(c0 + alpha * x, (N,1))
+        x = jnp.linspace(0., 1., N).reshape([N,1])
+        return dq.unit(c0 + alpha * x)
 
     psi1 = create_substate(1, 0.2, N)
     psi2 = create_substate(-2, 0.3, N)
     psi3 = create_substate(3, 0.4, 2)
     psi4 = create_substate(4, 0.5, 2)
     psi = dq.tensor(psi1, psi2, psi3, psi4)
-    return psi
+    return dq.todm(psi)
 
 
 def f(psi, N):
