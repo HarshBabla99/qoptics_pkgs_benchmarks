@@ -13,7 +13,7 @@ def setup(N):
     def create_substate(c0, alpha, N):
         x = np.linspace(0., 1., N)
         data = (c0 + alpha * x).conj()
-        return qt.Qobj(data)
+        return qt.Qobj(data).unit()
     psi1 = create_substate(1, 0.2, N)
     psi2 = create_substate(-2, 0.3, N)
     psi3 = create_substate(3, 0.4, 2)
