@@ -10,13 +10,13 @@ cutoffs = range(10, 101, 10)
 
 def setup(N):
     alpha = 0.7
-    xvec = np.linspace(-50, 50, 100)
-    yvec = np.linspace(-50, 50, 100)
+    xvec = np.linspace(-5, 5, 100)
+    yvec = np.linspace(-5, 5, 100)
     state = qt.coherent(N, alpha)
     return state, xvec, yvec
 
 def f(state, xvec, yvec):
-    return qt.wigner(state, xvec, yvec)
+    return qt.wigner(state, xvec, yvec, g = 2.0)
 
 print("Benchmarking:", name)
 print("Cutoff: ", end="", flush=True)
