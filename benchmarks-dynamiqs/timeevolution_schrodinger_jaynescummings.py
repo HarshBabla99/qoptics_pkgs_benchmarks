@@ -8,9 +8,6 @@ def setup(N):
     wa = 1
     wc = 1
     g = 2
-    kappa = 0.5
-    gamma = 0.1
-    n_th = 0.75
     tlist = jnp.linspace(0, 10, 11)
 
     Ia = dq.eye(2)
@@ -26,17 +23,10 @@ def setup(N):
 
     H = wc*dq.tensor(n, Ia) + dq.tensor(Ic, 0.5*wa*sz) + g*(dq.tensor(adag, sm) + dq.tensor(a, sp))
 
-    c_ops = [
-        dq.tensor(jnp.sqrt(kappa*(1+n_th)) * a   , Ia),
-        dq.tensor(jnp.sqrt(kappa*n_th)     * adag, Ia),
-        dq.tensor(Ic                             , jnp.sqrt(gamma) * sm),
-    ]
-
     psi0 = dq.tensor(dq.fock(N, 0), dq.unit(dq.basis(2, 0) + dq.basis(2, 1)))
 
     args = {
             'H'       : H, 
-            'c_ops'   : c_ops, 
             'psi0'    : psi0, 
             'tlist'   : tlist, 
             'exp_ops' : [dq.tensor(n, Ia)], 
@@ -46,7 +36,7 @@ def setup(N):
     return (N,args)
 
 def f(N, args):
-    exp_n = dq.mesolve(args['H'], args['c_ops'], args['psi0'], args['tlist'],
+    exp_n = dq.sesolve(args['H'], args['psi0'], args['tlist'],
                        exp_ops = args['exp_ops'], solver=args['solver']).expects[0,:]
 
     return jnp.real(exp_n)
@@ -55,11 +45,11 @@ def check_f(N, args):
     return sum(f(N,args))
 
 if __name__ == '__main__':
-    benchmark(name    = 'timeevolution_master_jaynescummings', 
+    benchmark(name    = 'timeevolution_schroedinger_jaynescummings', 
               f       = f,
               setup   = setup,
               samples = 3,
               evals   = 6,
-              cutoffs = range(5, 81, 5),
+              cutoffs = range(25, 251, 25),
               check_f = check_f,
               to_jit  = False)

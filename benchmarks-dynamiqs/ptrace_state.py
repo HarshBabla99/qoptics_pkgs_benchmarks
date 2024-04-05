@@ -1,13 +1,6 @@
 import dynamiqs as dq
 import jax.numpy as jnp
-import benchmarkutils
-
-name = "ptrace_state"
-
-samples = 5
-evals = 100
-cutoffs = range(2, 16)
-
+from benchmarkutils import benchmark
 
 def setup(N):
     def create_substate(c0, alpha, N):
@@ -23,24 +16,20 @@ def setup(N):
 
     # Note I convert this to a dm first. 
     # When I directly send the ket, it fails (with the error x2APIC is not supported)
-    return dq.todm(psi)
+    return (N, dq.todm(psi))
 
-
-def f(psi, N):
+def f(N, psi):
     return dq.ptrace(psi, [0,3], (N,N,2,2))
 
+def check_f(N, psi):
+    return jnp.abs(f(N,psi)).sum()
 
-print("Benchmarking:", name)
-print("Cutoff: ", end="", flush=True)
-checks = {}
-results = []
-for N in cutoffs:
-    print(N, "", end="", flush=True)
-    psi = setup(N)
-    checks[N] = jnp.abs(f(psi, N)).sum()
-    t = benchmarkutils.run_benchmark(f, psi, N, samples=samples, evals=evals)
-    results.append({"N": 4 * N**2, "t": t})
-print()
-
-benchmarkutils.check(name, checks)
-benchmarkutils.save(name, results)
+if __name__ == '__main__':
+    benchmark(name    = 'ptrace_state', 
+              f       = f,
+              setup   = setup,
+              samples = 5,
+              evals   = 100,
+              cutoffs = range(2, 16),
+              check_f = check_f,
+              to_jit  = False)

@@ -1,6 +1,6 @@
 import dynamiqs as dq
 import jax.numpy as jnp
-import benchmarkutils
+from benchmarkutils import benchmark
 
 name = "ptrace_operator"
 
@@ -19,24 +19,21 @@ def setup(N):
     op3 = create_suboperator(3, 0.4, 2)
     op4 = create_suboperator(4, 0.5, 2)
     op = dq.tensor(op1, op2, op3, op4)
-    return op
+    return (N,op)
 
 
-def f(op, N):
+def f(N,op):
     return dq.ptrace(op, (0, 3), (N,N,2,2))
 
+def check_f(N, op):
+    return jnp.abs(f(N,op)).sum()
 
-print("Benchmarking:", name)
-print("Cutoff: ", end="", flush=True)
-checks = {}
-results = []
-for N in cutoffs:
-    print(N, "", end="", flush=True)
-    op = setup(N)
-    checks[N] = jnp.abs(f(op, N)).sum()
-    t = benchmarkutils.run_benchmark(f, op, N, samples=samples, evals=evals)
-    results.append({"N": 4*N**2, "t": t})
-print()
-
-benchmarkutils.check(name, checks)
-benchmarkutils.save(name, results)
+if __name__ == '__main__':
+    benchmark(name    = 'ptrace_operator', 
+              f       = f,
+              setup   = setup,
+              samples = 5,
+              evals   = 100,
+              cutoffs = range(2, 16),
+              check_f = check_f,
+              to_jit  = False)

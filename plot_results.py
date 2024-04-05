@@ -41,6 +41,5 @@ for testname in testnames:
 
     plt.legend()
     plt.savefig(f'plots/{testname}.png')
-    plt.show()
-
-
+    #plt.show()
+    plt.clf()

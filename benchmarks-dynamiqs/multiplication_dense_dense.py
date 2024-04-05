@@ -1,34 +1,23 @@
 import dynamiqs as dq
 from jax import random
-import jax.numpy as jnp
-import benchmarkutils
-from jax import jit
-
-name = "multiplication_dense_dense"
-
-samples = 2
-evals = 100
-cutoffs = range(50, 601, 50)
-
-key = random.PRNGKey(42)
+from benchmarkutils import benchmark
 
 def setup(N):
+    key = random.PRNGKey(42)
     op1 = dq.rand_dm(key, (N, N)) * 0.2j
     op2 = dq.rand_dm(key, (N, N)) * 0.1j
-    return op1, op2
+    return (op1, op2)
 
-@jit
 def f(op1, op2):
     return op1 @ op2
 
-print("Benchmarking:", name)
-print("Cutoff: ", end="", flush=True)
-results = []
-for N in cutoffs:
-    print(N, "", end="", flush=True)
-    op1, op2 = setup(N)
-    t = benchmarkutils.run_benchmark(f, op1, op2, samples=samples, evals=evals)
-    results.append({"N": N, "t": t})
-print()
+if __name__ == '__main__':
+    benchmark(name    = 'multiplication_dense_dense', 
+              f       = f,
+              setup   = setup,
+              samples = 2,
+              evals   = 100,
+              cutoffs = range(50, 601, 50),
+              check_f = None,
+              to_jit  = True)
 
-benchmarkutils.save(name, results)
