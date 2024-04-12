@@ -1,31 +1,21 @@
 import numpy as np
-import benchmarkutils
-
-name = "multiplication_dense_dense"
-
-samples = 2
-evals = 100
-cutoffs = range(50, 601, 50)
-
+from benchmarkutils import benchmark
 
 def setup(N):
     op1 = np.random.rand(N, N) * 0.2j
     op2 = np.random.rand(N, N) * 0.1j
-    return op1, op2
-
+    return (op1, op2)
 
 def f(op1, op2):
     return op1 * op2
 
+if __name__ == '__main__':
+    benchmark(name    = 'multiplication_dense_dense', 
+              f       = f,
+              setup   = setup,
+              samples = 2,
+              evals   = 100,
+              cutoffs = range(50, 601, 50),
+              check_f = None,
+              to_jit  = True)
 
-print("Benchmarking:", name)
-print("Cutoff: ", end="", flush=True)
-results = []
-for N in cutoffs:
-    print(N, "", end="", flush=True)
-    op1, op2 = setup(N)
-    t = benchmarkutils.run_benchmark(f, op1, op2, samples=samples, evals=evals)
-    results.append({"N": N, "t": t})
-print()
-
-benchmarkutils.save(name, results)

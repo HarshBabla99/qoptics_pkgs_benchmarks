@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=dynamiqs-benchmarking
-#SBATCH --output=dynamiqs-benchmarking.log 
+#SBATCH --output=dynamiqs-benchmarking.log
 #SBATCH --partition=gpu
 #SBATCH --ntasks=1
 #SBATCH --nodes=1

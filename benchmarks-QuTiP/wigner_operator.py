@@ -1,36 +1,29 @@
 import qutip as qt
 import numpy as np
-import benchmarkutils
-
-name = "wigner_operator"
-
-samples = 3
-evals = 5
-cutoffs = range(10, 101, 10)
+from benchmarkutils import benchmark
 
 def setup(N):
     alpha = 0.7
+    
     xvec = np.linspace(-5, 5, 100)
     yvec = np.linspace(-5, 5, 100)
-    state = qt.coherent(N, alpha)
-    op = state*state.dag()
-    return op, xvec, yvec
 
+    state = qt.coherent_dm(N, alpha)
+    return (state, xvec, yvec)
+ 
 def f(state, xvec, yvec):
-    return qt.wigner(state, xvec, yvec, g = 2.0)
+    return qt.wigner(state, xvec = xvec, yvec = yvec, g= 2.0)
 
-print("Benchmarking:", name)
-print("Cutoff: ", end="", flush=True)
-checks = {}
-results = []
-for N in cutoffs:
-    print(N, "", end="", flush=True)
-    op, xvec, yvec = setup(N)
+def check_f(state, xvec, yvec):
     alpha_check = 0.6 + 0.1j
-    checks[N] = f(op, [alpha_check.real], [alpha_check.imag])[0, 0]
-    t = benchmarkutils.run_benchmark(f, op, xvec, yvec, samples=samples, evals=evals)
-    results.append({"N": N, "t": t})
-print()
+    return f(state, [alpha_check.real], [alpha_check.imag])[0,0]
 
-benchmarkutils.check(name, checks)
-benchmarkutils.save(name, results)
+if __name__ == '__main__':
+    benchmark(name    = 'wigner_operator', 
+              f       = f,
+              setup   = setup,
+              samples = 3,
+              evals   = 5,
+              cutoffs = range(10, 101, 10),
+              check_f = check_f,
+              to_jit  = False)

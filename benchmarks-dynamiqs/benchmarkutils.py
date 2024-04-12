@@ -66,7 +66,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
     for jit_status in jits:
         for backend in backends:
 
-            print(f"Benchmarking:{name} - {backend} - jit = {jit_status}")
+            print(f"Benchmarking: {name} - {backend} - jit = {jit_status}", flush = True)
             print("Cutoff: ", end="", flush=True)
             
             results = []
@@ -105,7 +105,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
 
             # Check the results
             if check_f is not None:
-                check(curr_name, checks, 0.05)
+                check(curr_name, checks, check_thresh)
 
             # Save the results to a file
             save(curr_name, results)

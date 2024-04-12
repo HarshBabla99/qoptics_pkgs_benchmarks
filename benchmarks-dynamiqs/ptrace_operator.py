@@ -2,13 +2,6 @@ import dynamiqs as dq
 import jax.numpy as jnp
 from benchmarkutils import benchmark
 
-name = "ptrace_operator"
-
-samples = 5
-evals = 100
-cutoffs = range(2, 16)
-
-
 def setup(N):
     def create_suboperator(c0, alpha, N):
         x = jnp.linspace(0., 1., N**2)
@@ -20,7 +13,6 @@ def setup(N):
     op4 = create_suboperator(4, 0.5, 2)
     op = dq.tensor(op1, op2, op3, op4)
     return (N,op)
-
 
 def f(N,op):
     return dq.ptrace(op, (0, 3), (N,N,2,2))
