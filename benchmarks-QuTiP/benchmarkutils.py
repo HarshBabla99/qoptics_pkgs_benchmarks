@@ -7,7 +7,7 @@ import numpy as np
 from os.path import exists
 
 benchmark_directory = "benchmarks-QuTiP"
-commitID = qutip.version.version
+commitID = qt.version.version
 result_path = "../results/results-QuTiP-{}-{}.json"
 
 def examplename(name):
