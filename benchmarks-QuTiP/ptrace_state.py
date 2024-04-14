@@ -12,7 +12,7 @@ def setup(N):
     psi2 = create_substate(-2, 0.3, N)
     psi3 = create_substate(3, 0.4, 2)
     psi4 = create_substate(4, 0.5, 2)
-    psi = dq.tensor(psi1, psi2, psi3, psi4)
+    psi = qt.tensor(psi1, psi2, psi3, psi4)
 
     # Note the corresponding dynamiqs code had to convert this to a dm first
     # no need to do that for qutip
@@ -22,7 +22,7 @@ def f(N, psi):
      return qt.ptrace(psi, [0, 3])
 
 def check_f(N, psi):
-    return np.abs(f(N,psi)).sum()
+    return np.abs(f(N,psi).full()).sum()
 
 if __name__ == '__main__':
     benchmark(name    = 'ptrace_state', 
@@ -31,5 +31,4 @@ if __name__ == '__main__':
               samples = 5,
               evals   = 100,
               cutoffs = range(2, 16),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)

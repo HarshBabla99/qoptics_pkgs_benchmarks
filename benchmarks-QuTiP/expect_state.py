@@ -17,5 +17,4 @@ if __name__ == '__main__':
               samples = 5,
               evals   = 100,
               cutoffs = range(500, 10001, 500),
-              check_f = f,
-              to_jit  = False)
+              check_f = f)

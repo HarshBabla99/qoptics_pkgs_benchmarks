@@ -18,7 +18,7 @@ def f(N,op):
     return qt.ptrace(op, (0, 3))
 
 def check_f(N, op):
-    return np.abs(f(N,op)).sum()
+    return np.abs(f(N,op).full()).sum()
 
 if __name__ == '__main__':
     benchmark(name    = 'ptrace_operator', 
@@ -27,5 +27,4 @@ if __name__ == '__main__':
               samples = 5,
               evals   = 100,
               cutoffs = range(2, 16),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)

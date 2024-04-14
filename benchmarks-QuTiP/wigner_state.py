@@ -25,5 +25,4 @@ if __name__ == '__main__':
               samples = 3,
               evals   = 5,
               cutoffs = range(10, 101, 10),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)

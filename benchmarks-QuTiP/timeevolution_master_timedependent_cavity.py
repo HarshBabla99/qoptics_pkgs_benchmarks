@@ -20,10 +20,10 @@ def setup(N):
     J = [np.sqrt(kappa) * a]
     psi0 = qt.coherent(N, alpha0)
 
-    f1 = lambda t: np.exp(1j * wl * t)
-    f2 = lambda t: np.exp(-1j * wl * t)
+    f1 = lambda t, args: np.exp(1j * wl * t)
+    f2 = lambda t, args: np.exp(-1j * wl * t)
 
-    H = [wc * n, [eta * a, f1], [eta * at, f2]]
+    H = [wc * n, [eta * a, f1], [eta * adag, f2]]
 
     args = {
         'H'       : H, 
@@ -52,5 +52,4 @@ if __name__ == '__main__':
               evals   = 6,
               cutoffs = range(10, 141, 10),
               check_f = check_f,
-              check_thresh = 1e-4,
-              to_jit  = False)
+              check_thresh = 1e-4)

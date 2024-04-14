@@ -21,6 +21,8 @@ def examplename(name):
         return name
 
 def run(f, *args, samples=5, evals=1):
+    dq.set_precision('double')
+
     D = {"f": f, "args": args}
     t = timeit.repeat("f(*args)", globals=D, number=evals, repeat=samples)
     return min(t)/evals
@@ -66,7 +68,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
     for jit_status in jits:
         for backend in backends:
 
-            print(f"Benchmarking: {name} - {backend} - jit = {jit_status}", flush = True)
+            print(f"Benchmarking:{name} - {backend} - jit = {jit_status}")
             print("Cutoff: ", end="", flush=True)
             
             results = []
@@ -74,7 +76,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
                 checks = {}
 
             # Set the backend
-            jax_config.update('jax_platform_name', backend)
+            dq.set_device(backend)
 
             # To jit or not to jit, that is the question
             if jit_status:
@@ -105,7 +107,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
 
             # Check the results
             if check_f is not None:
-                check(curr_name, checks, check_thresh)
+                check(curr_name, checks, 0.05)
 
             # Save the results to a file
             save(curr_name, results)

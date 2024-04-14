@@ -23,7 +23,7 @@ def setup(N):
     f1 = 'exp(1j*{wl}*t)'.format(wl=wl)
     f2 = 'exp(-1j*{wl}*t)'.format(wl=wl)
 
-    H = [wc * n, [eta * a, f1], [eta * at, f2]]
+    H = [wc * n, [eta * a, f1], [eta * adag, f2]]
 
     args = {
         'H'       : H, 
@@ -45,12 +45,11 @@ def check_f(N,args):
     return sum(f(N,args))
 
 if __name__ == '__main__':
-    benchmark(name    = 'timeevolution_master_timedependent_cavity', 
+    benchmark(name    = 'timeevolution_master_timedependent_cavity[cython]', 
               f       = f,
               setup   = setup,
               samples = 3,
               evals   = 6,
               cutoffs = range(10, 141, 10),
               check_f = check_f,
-              check_thresh = 1e-4,
-              to_jit  = False)
+              check_thresh = 1e-4)

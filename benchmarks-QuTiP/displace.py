@@ -20,5 +20,4 @@ if __name__ == '__main__':
               evals   = 100,
               cutoffs = range(10, 151, 10),
               check_f = check_f,
-              check_thresh = 0.05,
-              to_jit  = False)
+              check_thresh = 0.05)

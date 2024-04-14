@@ -7,7 +7,7 @@ juliabenchmarks = "benchmarks-QuantumOptics.jl"
 qutipbenchmarks = "benchmarks-QuTiP"
 dynamiqsbenchmarks = "benchmarks-dynamiqs"
 
-seperating_str = "###########################################################################################\n Benchmarking {package} \n ###########################################################################################\n\n"
+seperating_str = "###########################################################################################\n Benchmarking {package} \n###########################################################################################\n\n"
 
 # subprocess.run(["python", "hardware_specs.py"], check=True)
 

@@ -3,7 +3,7 @@ import jax.numpy as jnp
 from benchmarkutils import benchmark
 
 def setup(N):
-    solver = dq.solver.Tsit5(rtol = 1e-6, atol = 1e-8, nsteps = 1000000)
+    solver = dq.solver.Tsit5(rtol = 1e-6, atol = 1e-8, max_steps = 1000000)
     
     kappa = 1.
     eta = 1.5

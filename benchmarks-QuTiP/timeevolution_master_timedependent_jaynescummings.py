@@ -12,10 +12,10 @@ def setup(N):
     kappa = 0.5
     gamma = 0.1
     n_th = 0.75
-    tlist = jnp.linspace(0, 10, 11)
+    tlist = np.linspace(0, 10, 11)
 
-    Ia = qt.eye(2)
-    Ic = qt.eye(N)
+    Ia = qt.qeye(2)
+    Ic = qt.qeye(N)
 
     a = qt.destroy(N)
     adag = qt.create(N)
@@ -26,8 +26,8 @@ def setup(N):
     H1 = g * qt.tensor(adag, sm)
     H2 = g * qt.tensor(a   , sp)
 
-    f1 = lambda t: np.exp(-1j*delta*t)
-    f2 = lambda t: np.exp(1j*delta*t)
+    f1 = lambda t, args: np.exp(-1j*delta*t)
+    f2 = lambda t, args: np.exp(1j*delta*t)
 
     H = [[H1, f1], [H2, f2]]
 
@@ -37,14 +37,14 @@ def setup(N):
         qt.tensor(Ic                            , np.sqrt(gamma) * sm),
     ]
 
-    psi0 = dq.tensor(qt.fock(N, 0), qt.unit(dq.basis(2, 0) + qt.basis(2, 1)))
+    psi0 = qt.tensor(qt.fock(N, 0), (qt.basis(2, 0) + qt.basis(2, 1)).unit())
 
     args = {
             'H'       : H, 
             'c_ops'   : c_ops, 
             'psi0'    : psi0, 
             'tlist'   : tlist, 
-            'exp_ops' : [dq.tensor(a, sp)], 
+            'exp_ops' : [qt.tensor(a, sp)], 
             'options'  : options
         }
     
@@ -66,5 +66,4 @@ if __name__ == '__main__':
               samples = 3,
               evals   = 6,
               cutoffs = range(5, 81, 5),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)

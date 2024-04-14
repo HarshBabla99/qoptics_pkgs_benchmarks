@@ -45,5 +45,4 @@ if __name__ == '__main__':
               samples = 3,
               evals   = 6,
               cutoffs = range(50, 501, 50),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)

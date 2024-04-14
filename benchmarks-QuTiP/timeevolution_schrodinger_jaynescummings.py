@@ -10,8 +10,8 @@ def setup(N):
     g = 2
     tlist = np.linspace(0, 10, 11)
 
-    Ia = qt.eye(2)
-    Ic = qt.eye(N)
+    Ia = qt.qeye(2)
+    Ic = qt.qeye(N)
 
     a = qt.destroy(N)
     adag = qt.create(N)
@@ -23,7 +23,7 @@ def setup(N):
 
     H = wc*qt.tensor(n, Ia) + qt.tensor(Ic, 0.5*wa*sz) + g*(qt.tensor(adag, sm) + qt.tensor(a, sp))
 
-    psi0 = qt.tensor(qt.fock(N, 0), qt.unit(qt.basis(2, 0) + qt.basis(2, 1)))
+    psi0 = qt.tensor(qt.fock(N, 0), (qt.basis(2, 0) + qt.basis(2, 1)).unit())
 
     args = {
             'H'       : H, 
@@ -51,5 +51,4 @@ if __name__ == '__main__':
               samples = 3,
               evals   = 6,
               cutoffs = range(25, 251, 25),
-              check_f = check_f,
-              to_jit  = False)
+              check_f = check_f)
