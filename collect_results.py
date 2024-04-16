@@ -18,8 +18,8 @@ names = [
     "timeevolution_master_jaynescummings",
     "timeevolution_master_timedependent_cavity",
     "timeevolution_master_timedependent_jaynescummings",
-    "timeevolution_schroedinger_cavity",
-    "timeevolution_schroedinger_jaynescummings"
+    "timeevolution_schrodinger_cavity",
+    "timeevolution_schrodinger_jaynescummings"
 ]
 
 filenames = os.listdir("results")

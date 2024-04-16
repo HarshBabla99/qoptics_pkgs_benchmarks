@@ -21,8 +21,6 @@ def examplename(name):
         return name
 
 def run(f, *args, samples=5, evals=1):
-    dq.set_precision('double')
-
     D = {"f": f, "args": args}
     t = timeit.repeat("f(*args)", globals=D, number=evals, repeat=samples)
     return min(t)/evals
@@ -52,6 +50,9 @@ def save(name, results):
     f.close()
 
 def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-5, to_jit=False):
+    
+    # Double precision
+    dq.set_precision('double')
 
     # Get the backends
     if xla_bridge.get_backend().platform == 'gpu':

@@ -16,6 +16,6 @@ if __name__ == '__main__':
               setup   = setup,
               samples = 5,
               evals   = 100,
-              cutoffs = range(500, 10001, 500),
+              cutoffs = range(500, 9001, 500),
               check_f = f,
               to_jit  = False)

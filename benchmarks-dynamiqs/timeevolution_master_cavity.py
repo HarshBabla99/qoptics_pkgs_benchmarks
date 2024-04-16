@@ -43,7 +43,7 @@ def check_f(N,args):
     return sum(f(N,args))
 
 if __name__ == '__main__':
-    benchmark(name    = 'timeevolution_master_cavity', 
+    benchmark(name    = 'timeevolution_master_cavity_savestates', 
               f       = f,
               setup   = setup,
               samples = 3,

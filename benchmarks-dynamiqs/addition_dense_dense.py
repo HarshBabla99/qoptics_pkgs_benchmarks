@@ -19,5 +19,6 @@ if __name__ == '__main__':
               evals   = 100,
               cutoffs = range(50, 801, 50),
               check_f = None, 
-              check_thresh = None)
+              check_thresh = None,
+              to_jit  = True)
     

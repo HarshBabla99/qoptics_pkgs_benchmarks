@@ -45,7 +45,7 @@ def check_f(N, args):
     return sum(f(N,args))
 
 if __name__ == '__main__':
-    benchmark(name    = 'timeevolution_schroedinger_jaynescummings', 
+    benchmark(name    = 'timeevolution_schrodinger_jaynescummings', 
               f       = f,
               setup   = setup,
               samples = 3,

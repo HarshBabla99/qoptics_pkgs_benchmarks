@@ -24,24 +24,38 @@ seperating_str = "##############################################################
 #     warnings.simplefilter('ignore')
 # 
 # 
+
+####################################################################################################
 print(seperating_str.format(package = 'QuTip'), flush = True)
 os.chdir(qutipbenchmarks)
 filenames = os.listdir(".")
 for name in filenames:
     if "benchmarkutils" in name or not name.endswith(".py"):
         continue
-    subprocess.run(["python", name], check=True)
+    
+    try:
+        subprocess.run(["python", name], check = True)
+    except:
+        print(f"{name} failed")
+
 os.chdir("..")
 
+####################################################################################################
 print(seperating_str.format(package = 'dynamiqs'), flush = True)
 os.chdir(dynamiqsbenchmarks)
 filenames = os.listdir(".")
 for name in filenames:
     if "benchmarkutils" in name or not name.endswith(".py"):
         continue
-    subprocess.run(["python", name], check=True)
+
+    try:
+        subprocess.run(["python", name], check = True)
+    except:
+        print(f"{name} failed")
+
 os.chdir("..")
 
+####################################################################################################
 # os.chdir(matlabbenchmarks)
 # subprocess.run(["matlab", "-nodisplay", "-nosplash", "-nodesktop", "-r", 'run runall.m; quit;'], check=True)
 # os.chdir("..")
