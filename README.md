@@ -16,18 +16,16 @@ This repository collects a set of examples which can be used to compare differen
 
 ### Setting up the testing environment
 
-To reduce noise use dedicated cpu core for the benchmarks. This can be done with cset:
+To reduce noise use dedicated cpu core for the benchmarks. I use a dedicated cluster node, and run `make.sh` using SLURM.
 
-    sudo cset shield -k on -c 0
-    sudo cset shield --user=sebastian --group=users -e bash
+For julia, one still has to set the users home directory:
 
-Especially for julia, one still has to set the users home directory:
-
-    HOME=/home/sebastian
+    HOME=/home/[username]
 
 ### Running the benchmarks
 
-Now one can either manually run benchmarks of interest by simply executing the benchmark file or alternatively use the `runall.py` script to run them all automatically.
+Now one can either manually run benchmarks of interest by simply executing the benchmark file or alternatively use the `run_all.py` script to run them all automatically. 
+The bash script `make.sh` runs `run_all.py`, and also collects and plots the data. `make.sh` is compatible with SLURM. 
 
 ## More information to this repository
 
@@ -41,13 +39,14 @@ Every single benchmark file has more or less the same structure. A `setup` funct
 * `results`: The results of the benchmarking is stored here as json files.
 * `checks`: The output generated from QuantumOptics.jl is stored here and later on compared to QuTiP's output to make sure that the examples calculate the same things. At the moment the toolbox results are not checked.
 * `results-collected`: All benchmarking results for each example are stored together in one json file.
-* `sourcecode`: The source code of the different implementations of all examples is extracted and stripped from all boilerplate code. This makes it easy to present on the website what exactly was tested.
 
 ### Helper scripts
 
-* `runall.py`: Benchmarks can be performed manually by executing the corresponding benchmark file or run automatically with the help of this script.
+* `run_all.py`: Benchmarks can be performed manually by executing the corresponding benchmark file or run automatically with the help of this script.
 * `collect_results.py`: Collects the benchmarking results from the `results` directory, collects all benchmarks belonging to the same example into one file and writes the output as json into the `results-collected` directory.
 * `extract_code.py`: Extracts the important benchmark code from all implementations and stores them in the `sourcecode` folder. Each file is executed to make sure that it really works.
 * `hardware_specs.py`: Collects information about hardware and used software and stores it in the results directory.
 * `plot_results-py`: Uses matplotlib to visualize the benchmark results stored in `results-collected`.
-* `make.jl`: Runs `collect_results.py`, `extract_code.py`, `hardware_specs.py` and copies all files of interest into the correct website directories in `../QuantumOptics.jl-website`.
+* `make.sh`: Runs ``run_all.py`, `collect_results.py`, `extract_code.py`, 
+> [!NOTE]
+> TODO: `make.sh` should also run `hardware_specs.py` and copy all files of interest into the correct website directories.
