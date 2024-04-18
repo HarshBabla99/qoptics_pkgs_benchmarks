@@ -1,6 +1,8 @@
 # 0. Code
 Link to [Github](https://github.com/HarshBabla99/qoptics_pkgs_benchmarks)
 
+These were run on a dedicated cpu & gpu node on an HPC cluster. 
+
 # 1. Time Evolution
 Benchmarks for `sesolve` (for the lossless case) and `mesolve` (for the lossy case)
 
