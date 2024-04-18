@@ -2,8 +2,8 @@ import qutip as qt
 import numpy as np
 from benchmarkutils import benchmark
 
-def setup(N):
-    options = qt.Options(atol = 1e-8, rtol = 1e-6)
+def setup(N, save_states):
+    options = qt.Options(atol = 1e-8, rtol = 1e-6, store_states = save_states)
 
     kappa = 1.
     eta = 1.5
@@ -42,10 +42,11 @@ def check_f(N,args):
     return sum(f(N,args))
 
 if __name__ == '__main__':
-    benchmark(name    = 'timeevolution_master_cavity_savestates', 
+    benchmark(name    = 'timeevolution_master_cavity', 
               f       = f,
               setup   = setup,
               samples = 3,
               evals   = 6,
               cutoffs = range(10, 151, 10),
-              check_f = check_f)
+              check_f = check_f, 
+              is_time_evo = True)

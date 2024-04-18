@@ -2,8 +2,9 @@ import dynamiqs as dq
 import jax.numpy as jnp
 from benchmarkutils import benchmark
 
-def setup(N):
+def setup(N, save_states):
     solver = dq.solver.Tsit5(rtol = 1e-6, atol = 1e-8)
+    options = dq.Options(save_states = save_states)
 
     wa = 1
     wc = 1
@@ -30,14 +31,16 @@ def setup(N):
             'psi0'    : psi0, 
             'tlist'   : tlist, 
             'exp_ops' : [dq.tensor(n, Ia)], 
-            'solver'  : solver
+            'solver'  : solver,
+            'options' : options
         }
     
     return (N,args)
 
 def f(N, args):
     exp_n = dq.sesolve(args['H'], args['psi0'], args['tlist'],
-                       exp_ops = args['exp_ops'], solver=args['solver']).expects[0,:]
+                       exp_ops = args['exp_ops'], 
+                       solver=args['solver'], options = args['options']).expects[0,:]
 
     return jnp.real(exp_n)
 
@@ -52,4 +55,5 @@ if __name__ == '__main__':
               evals   = 6,
               cutoffs = range(25, 251, 25),
               check_f = check_f,
-              to_jit  = False)
+              to_jit  = False, 
+              is_time_evo = True)

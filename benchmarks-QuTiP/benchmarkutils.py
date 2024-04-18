@@ -45,32 +45,53 @@ def save(name, results):
     json.dump(results, f)
     f.close()
 
-def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-5):
+def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-5,
+              is_time_evo = False):
 
-    print(f"Benchmarking: {name}", flush = True)
-    print("Cutoff: ", end="", flush=True)
-    
-    results = []
-    if check_f is not None:
-        checks = {}
+    # This is a flag to for a time-evolution simulation or not
+    # For time-evolutions, we iterate over the save-states, else we do not
+    if is_time_evo:
+        save_options = [False, True]
+    else:
+        save_options = [None]
 
-    # Now run this for various cutoffs
-    for N in cutoffs:
-        print(N, "", end="", flush=True)
-        setup_args = setup(N)
+    for save_states in save_options:
+        print(f"Benchmarking:{name}")
+        if save_states is not None:
+            print(f"\t> save_state = {save_states}")
+        print("\tCutoff: ", end="", flush=True)
 
+        results = []
         if check_f is not None:
-            checks[N] = float(np.real(check_f(*setup_args)))
+            checks = {}
 
-        t = run(f, *setup_args, 
-                samples=samples, evals=evals)
+        # Save state or not
+        if save_states is not None:
+            if save_states:
+                name = f'{name}(save_states)'
 
-        results.append({"N": N, "t": t})
-    print()
+        # Now run this for various cutoffs
+        for N in cutoffs:
+            print(N, "", end="", flush=True)
+            
+            # The setup needs the save_states flag, but only if we're running a time evo. sim
+            if save_states is None:
+                setup_args = setup(N)
+            else:
+                setup_args = setup(N, save_states)
 
-    # Check the results
-    if check_f is not None:
-        check(name, checks, check_thresh)
+            if check_f is not None:
+                checks[N] = float(np.real(check_f(*setup_args)))
 
-    # Save the results to a file
-    save(name, results)
+            t = run(f, *setup_args, 
+                    samples=samples, evals=evals)
+
+            results.append({"N": N, "t": t})
+        print()
+
+        # Check the results
+        if check_f is not None:
+            check(name, checks, check_thresh)
+
+        # Save the results to a file
+        save(name, results)

@@ -1,523 +1,146 @@
-
-CommandNotFoundError: Your shell has not been properly configured to use 'conda deactivate'.
-To initialize your shell, run
-
-    $ conda init <SHELL_NAME>
-
-Currently supported shells are:
-  - bash
-  - fish
-  - tcsh
-  - xonsh
-  - zsh
-  - powershell
-
-See 'conda init --help' for more information and options.
-
-IMPORTANT: You may need to close and restart your shell after running 'conda init'.
-
-
-###########################################################################################
- Benchmarking QuTip 
-###########################################################################################
-
-
-Benchmarking: addition_dense_dense
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 
-Benchmarking: coherentstate
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
+Benchmarking:timeevolution_master_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
+	 Checking against check file.
+Benchmarking:timeevolution_master_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
+	 Checking against check file.
+Benchmarking:timeevolution_master_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
+	 Checking against check file.
+Benchmarking:timeevolution_master_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
+	 Checking against check file.
+Benchmarking:timeevolution_master_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_master_timedependent_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
+	 Checking against check file.
+Benchmarking:timeevolution_schrodinger_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 50 100 150 200 250 300 350 400 450 500 
+	 Checking against check file.
+Benchmarking:timeevolution_schrodinger_cavity
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 50 100 150 200 250 300 350 400 450 500 
+	 Checking against check file.
+Benchmarking:timeevolution_schrodinger_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 50 100 150 200 250 300 350 400 450 500 
+	 Checking against check file.
+Benchmarking:timeevolution_schrodinger_cavity
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 50 100 150 200 250 300 350 400 450 500 
+	 Checking against check file.
+Benchmarking:timeevolution_schrodinger_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = False
+	Cutoff: 25 50 75 100 125 150 175 200 225 250 
 	 No check file found - write results to check file.
-Benchmarking: displace
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
+Benchmarking:timeevolution_schrodinger_jaynescummings
+	> backend     = cpu
+	> jit         = False
+	> save states = True
+	Cutoff: 25 50 75 100 125 150 175 200 225 250 
 	 No check file found - write results to check file.
-Benchmarking: expect_operator
-Cutoff: 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 
-	 No check file found - write results to check file.
-Benchmarking: expect_state
-Cutoff: 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500 6000 6500 7000 7500 8000 8500 9000 
-	 No check file found - write results to check file.
-Benchmarking: multiplication_bra_dense
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking: multiplication_dense_dense
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 
-Benchmarking: multiplication_dense_ket
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking: ptrace_operator
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 No check file found - write results to check file.
-Benchmarking: ptrace_state
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_master_cavity
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_master_jaynescummings
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_master_timedependent_cavity
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_master_timedependent_cavity[cython]
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
+Benchmarking:timeevolution_schrodinger_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = False
+	Cutoff: 25 50 75 100 125 150 175 200 225 250 
 	 Checking against check file.
-Benchmarking: timeevolution_master_timedependent_jaynescummings
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_master_timedependent_jaynescummings[cython]
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 Checking against check file.
-Benchmarking: timeevolution_schrodinger_cavity
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-	 No check file found - write results to check file.
-Benchmarking: timeevolution_schroedinger_jaynescummings
-Cutoff: 25 50 75 100 125 150 175 200 225 250 
-	 No check file found - write results to check file.
-Benchmarking: wigner_operator
-Cutoff: 10 20 30 40 50 60 70 80 90 100 
-	 No check file found - write results to check file.
-Benchmarking: wigner_state
-Cutoff: 10 20 30 40 50 60 70 80 90 100 
-	 No check file found - write results to check file.
-###########################################################################################
- Benchmarking dynamiqs 
-###########################################################################################
-
-
-Benchmarking:addition_dense_dense - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 
-Benchmarking:addition_dense_dense - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 
-Benchmarking:addition_dense_dense - cpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 
-Benchmarking:addition_dense_dense - gpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 650 700 750 800 
-Benchmarking:coherentstate - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-	 Checking against check file.
-Benchmarking:coherentstate - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-	 Checking against check file.
-Benchmarking:displace - cpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
-	 Checking against check file.
-Benchmarking:displace - gpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
-	 Checking against check file.
-Benchmarking:expect_operator - cpu - jit = False
-Cutoff: 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 
-	 Checking against check file.
-Benchmarking:expect_operator - gpu - jit = False
-Cutoff: 100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 
-	 Checking against check file.
-Benchmarking:expect_state - cpu - jit = False
-Cutoff: 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500 6000 6500 7000 7500 8000 8500 9000 
-	 Checking against check file.
-Benchmarking:expect_state - gpu - jit = False
-Cutoff: 500 1000 1500 2000 2500 3000 3500 4000 4500 5000 5500 6000 6500 7000 7500 8000 8500 9000 
-	 Checking against check file.
-Benchmarking:multiplication_bra_dense - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_bra_dense - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_bra_dense - cpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_bra_dense - gpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_dense_dense - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 
-Benchmarking:multiplication_dense_dense - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 
-Benchmarking:multiplication_dense_dense - cpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 
-Benchmarking:multiplication_dense_dense - gpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 550 600 
-Benchmarking:multiplication_dense_ket - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_dense_ket - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_dense_ket - cpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:multiplication_dense_ket - gpu - jit = True
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-Benchmarking:ptrace_operator - cpu - jit = False
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 Checking against check file.
-Benchmarking:ptrace_operator - gpu - jit = False
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 Checking against check file.
-Benchmarking:ptrace_state - cpu - jit = False
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 Checking against check file.
-Benchmarking:ptrace_state - gpu - jit = False
-Cutoff: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
-	 Checking against check file.
-Benchmarking:timeevolution_master_cavity - cpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
-	 Checking against check file.
-Benchmarking:timeevolution_master_cavity - gpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 
-	 Checking against check file.
-Benchmarking:timeevolution_master_jaynescummings - cpu - jit = False
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 Checking against check file.
-Benchmarking:timeevolution_master_jaynescummings - gpu - jit = False
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 Checking against check file.
-Benchmarking:timeevolution_master_timedependent_cavity - cpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
-	 Checking against check file.
-Benchmarking:timeevolution_master_timedependent_cavity - gpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 
-	 Checking against check file.
-Benchmarking:timeevolution_master_timedependent_jaynescummings - cpu - jit = False
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 Checking against check file.
-Benchmarking:timeevolution_master_timedependent_jaynescummings - gpu - jit = False
-Cutoff: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 
-	 Checking against check file.
-Benchmarking:timeevolution_schrodinger_cavity - cpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-	 Checking against check file.
-Benchmarking:timeevolution_schrodinger_cavity - gpu - jit = False
-Cutoff: 50 100 150 200 250 300 350 400 450 500 
-	 Checking against check file.
-Benchmarking:timeevolution_schrodinger_jaynescummings - cpu - jit = False
-Cutoff: 25 50 75 100 125 150 175 200 225 250 
-	 No check file found - write results to check file.
-Benchmarking:timeevolution_schrodinger_jaynescummings - gpu - jit = False
-Cutoff: 25 50 75 100 125 150 175 200 225 250 
-	 Checking against check file.
-Benchmarking:wigner_operator - cpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 
-	 Checking against check file.
-Benchmarking:wigner_operator - gpu - jit = False
-Cutoff: 10 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-20 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-30 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-40 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-50 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-60 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-70 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-80 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-90 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-100 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-
-	 Checking against check file.
-Benchmarking:wigner_state - cpu - jit = False
-Cutoff: 10 20 30 40 50 60 70 80 90 100 
-	 Checking against check file.
-Benchmarking:wigner_state - gpu - jit = False
-Cutoff: 10 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-20 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-30 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-40 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-50 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-60 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-70 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-80 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-90 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-100 WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-WARNING:root:Wigner computation is not yet supported on GPU for double precision (float64). The `state` array will be copied to the CPU to compute the Wigner distribution. Performance penalty is expected. If this is a problem for you, don't hesitate to open an issue on GitHub: https://github.com/dynamiqs/dynamiqs/issues/new.
-
+Benchmarking:timeevolution_schrodinger_jaynescummings
+	> backend     = gpu
+	> jit         = False
+	> save states = True
+	Cutoff: 25 50 75 100 125 150 175 200 225 250 
 	 Checking against check file.
 Loading:  addition_dense_dense
 Loading:  multiplication_dense_dense
@@ -531,12 +154,15 @@ Loading:  ptrace_operator
 Loading:  ptrace_state
 Loading:  wigner_operator
 Loading:  wigner_state
+Loading:  timeevolution_master_cavity_save_states
 Loading:  timeevolution_master_cavity
-Loading:  timeevolution_master_jaynescummings
-Loading:  timeevolution_master_timedependent_cavity
-Loading:  timeevolution_master_timedependent_jaynescummings
-Loading:  timeevolution_schrodinger_cavity
-Loading:  timeevolution_schrodinger_jaynescummings
+Traceback (most recent call last):
+  File "/vast/palmer/home.grace/hkb7/dynamiqs_scratch/qoptics_pkgs_benchmarks/collect_results.py", line 52, in <module>
+    version = extract_version(filename, testname)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/vast/palmer/home.grace/hkb7/dynamiqs_scratch/qoptics_pkgs_benchmarks/collect_results.py", line 41, in extract_version
+    assert name.endswith("-" + testname), name
+AssertionError: results-QuTiP-4.7.5-timeevolution_master_cavity_save_states
 .keep
 addition_dense_dense.json
 Open  addition_dense_dense.json
@@ -558,18 +184,8 @@ ptrace_operator.json
 Open  ptrace_operator.json
 ptrace_state.json
 Open  ptrace_state.json
-timeevolution_master_cavity.json
-Open  timeevolution_master_cavity.json
-timeevolution_master_jaynescummings.json
-Open  timeevolution_master_jaynescummings.json
-timeevolution_master_timedependent_cavity.json
-Open  timeevolution_master_timedependent_cavity.json
-timeevolution_master_timedependent_jaynescummings.json
-Open  timeevolution_master_timedependent_jaynescummings.json
-timeevolution_schrodinger_cavity.json
-Open  timeevolution_schrodinger_cavity.json
-timeevolution_schrodinger_jaynescummings.json
-Open  timeevolution_schrodinger_jaynescummings.json
+timeevolution_master_cavity_save_states.json
+Open  timeevolution_master_cavity_save_states.json
 wigner_operator.json
 Open  wigner_operator.json
 wigner_state.json

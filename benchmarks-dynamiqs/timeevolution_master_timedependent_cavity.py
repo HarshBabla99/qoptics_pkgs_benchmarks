@@ -2,9 +2,10 @@ import dynamiqs as dq
 import jax.numpy as jnp
 from benchmarkutils import benchmark
 
-def setup(N):
+def setup(N, save_states):
     solver = dq.solver.Tsit5(rtol = 1e-6, atol = 1e-8, max_steps = 1000000)
-    
+    options = dq.Options(save_states = save_states)
+
     kappa = 1.
     eta = 1.5
     wc = 1.8
@@ -31,13 +32,15 @@ def setup(N):
         'psi0'    : psi0, 
         'tlist'   : tlist, 
         'exp_ops' : [a], 
-        'solver'  : solver
+        'solver'  : solver,
+        'options' : options
     }
     return (N,args)
 
 def f(N, args):
     alpha_t = dq.mesolve(args['H'], args['c_ops'], args['psi0'], args['tlist'],
-                         exp_ops = args['exp_ops'], solver=args['solver']).expects[0,:][0]
+                         exp_ops = args['exp_ops'], 
+                         solver=args['solver'], options = args['options']).expects[0,:][0]
 
     return jnp.real(alpha_t)
 
@@ -53,4 +56,5 @@ if __name__ == '__main__':
               cutoffs = range(10, 141, 10),
               check_f = check_f,
               check_thresh = 1e-4,
-              to_jit  = False)
+              to_jit  = False,
+              is_time_evo = True)

@@ -23,7 +23,6 @@ def transform_json(d):
 
 testnames = os.listdir(sourcedir)
 for testname in testnames:
-    print(testname)
     if testname.startswith("."):
         continue
     # if not "ptrace" in testname:

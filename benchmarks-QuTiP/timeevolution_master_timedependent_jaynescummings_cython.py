@@ -2,8 +2,8 @@ import qutip as qt
 import numpy as np
 from benchmarkutils import benchmark
 
-def setup(N):
-    options = qt.Options(atol = 1e-8, rtol = 1e-6, nsteps = 1000000)
+def setup(N, save_states):
+    options = qt.Options(atol = 1e-8, rtol = 1e-6, nsteps = 1000000, store_states = save_states)
 
     wa = 1
     wc = 0.9
@@ -66,4 +66,5 @@ if __name__ == '__main__':
               samples = 3,
               evals   = 6,
               cutoffs = range(5, 81, 5),
-              check_f = check_f)
+              check_f = check_f, 
+              is_time_evo = True)

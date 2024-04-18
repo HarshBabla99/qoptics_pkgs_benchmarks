@@ -36,7 +36,7 @@ for name in filenames:
     try:
         subprocess.run(["python", name], check = True)
     except:
-        print(f"{name} failed")
+        print(f"{name} failed", flush = True)
 
 os.chdir("..")
 
@@ -51,7 +51,7 @@ for name in filenames:
     try:
         subprocess.run(["python", name], check = True)
     except:
-        print(f"{name} failed")
+        print(f"{name} failed", flush = True)
 
 os.chdir("..")
 

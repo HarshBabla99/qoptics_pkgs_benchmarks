@@ -2,8 +2,8 @@ import qutip as qt
 import numpy as np
 from benchmarkutils import benchmark
 
-def setup(N):
-    options = qt.Options(atol = 1e-8, rtol = 1e-6, nsteps = 1000000)
+def setup(N, save_states):
+    options = qt.Options(atol = 1e-8, rtol = 1e-6, nsteps = 1000000, store_states = save_states)
     
     kappa = 1.
     eta = 1.5
@@ -52,4 +52,5 @@ if __name__ == '__main__':
               evals   = 6,
               cutoffs = range(10, 141, 10),
               check_f = check_f,
-              check_thresh = 1e-4)
+              check_thresh = 1e-4,
+              is_time_evo = True)
