@@ -28,15 +28,13 @@ venv.bak/
 .vscode
 
 # ignore custom directories
-temp/
+tmp/
 deprecated/
 qobjevo_compiled_coeff_*.py
 cqobjevo_compiled_coeff_*
 .DS_Store
 
-results/
-results-collected/
-checks/
-sourcecode/
-comparison.ipynb
-old_names.py
+out/results/
+# out/results-collected/
+out/checks/
+out/sourcecode/

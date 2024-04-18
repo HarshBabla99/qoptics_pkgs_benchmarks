@@ -2,7 +2,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 
-sourcedir = "results-collected"
+sourcedir = "../out/results-collected"
 
 def transform_version(points):
     Nvec = []
@@ -39,6 +39,6 @@ for testname in testnames:
         plt.plot(points[0], points[1], "ok", alpha=0.4)
 
     plt.legend()
-    plt.savefig(f'plots/{testname}.png')
+    plt.savefig(f'../plots/{testname}.png')
     #plt.show()
     plt.clf()

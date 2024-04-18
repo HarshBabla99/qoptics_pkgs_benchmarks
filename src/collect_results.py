@@ -54,7 +54,7 @@ def cutdigits(x):
 def main():
 
     # Get a list of files in the "results" directory, and remove the file extension
-    filenames = [os.path.splitext(file)[0] for file in os.listdir("results")]
+    filenames = [os.path.splitext(file)[0] for file in os.listdir("../out/results")]
 
     # Iterate through the tests listed above
     for testname in names:
@@ -75,7 +75,7 @@ def main():
             version, save_states = extract_version(filename, testname)
 
             # Read the data
-            with open(f"results/{filename}.json", 'r') as f:
+            with open(f"../out/results/{filename}.json", 'r') as f:
                 data = json.load(f)
 
             # Round the data (data is a key ("N"), value ("t") pair)
@@ -89,13 +89,13 @@ def main():
                 d[version] = data
 
         # Save the collated results
-        path = f"results-collected/{testname}.json"
+        path = f"../out/results-collected/{testname}.json"
         with open(path, 'w') as f:
             json.dump(d, f)
             print(f"Saved: {testname}")
         
         if d_save_states:
-            path = f"results-collected/{testname}(save_states).json"
+            path = f"../out/results-collected/{testname}(save_states).json"
             with open(path, 'w') as f:
                 json.dump(d_save_states, f)
                 print(f"Saved: {testname}(save_states)")

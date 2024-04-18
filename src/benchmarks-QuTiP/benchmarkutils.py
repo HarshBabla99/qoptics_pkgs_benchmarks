@@ -8,7 +8,7 @@ from os.path import exists
 
 benchmark_directory = "benchmarks-QuTiP"
 commitID = qt.version.version
-result_path = "../results/results-QuTiP-{}-{}.json"
+result_path = "../../out/results/results-QuTiP-{}-{}.json"
 
 def examplename(name):
     if name.endswith("]"):
@@ -22,7 +22,7 @@ def run(f, *args, samples=5, evals=1):
     return min(t)/evals
 
 def check(name, D, eps=1e-5):
-    check_path = "../checks/" + examplename(name) + ".json"
+    check_path = "../../out/checks/" + examplename(name) + ".json"
     
     if exists(check_path):
         print("\t Checking against check file.")

@@ -1,5 +1,5 @@
 rm plots/*.png
-rm results/*.json
-rm results-collected/*.json
-rm checks/*.json
-# rm sourcecode/*
+rm out/results/*.json
+rm out/results-collected/*.json
+rm out/checks/*.json
+# rm out/sourcecode/*

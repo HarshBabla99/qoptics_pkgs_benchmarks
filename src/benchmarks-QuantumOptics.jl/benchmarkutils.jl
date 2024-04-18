@@ -24,7 +24,7 @@ function examplename(name)
 end
 
 function check(name, D, eps=1e-5)
-    check_path = "../checks/$(examplename(name)).json"
+    check_path = "../../out/checks/$(examplename(name)).json"
     if ispath(check_path)
         println("Checking against check file.")
         data = JSON.parsefile(check_path)
@@ -43,7 +43,7 @@ function check(name, D, eps=1e-5)
 end
 
 function save(name, results)
-    result_path = "../results/results-QuantumOptics.jl-$commitID-$name.json"
+    result_path = "../../out/results/results-QuantumOptics.jl-$commitID-$name.json"
     f = open(result_path, "w")
     write(f, JSON.json(results))
     close(f)

@@ -1,8 +1,8 @@
 # Benchmarks for popular quantum-optics frameworks
 
 > [!NOTE]  
-> This is a fork of the repo linked below, which carefully implemented the benchmarks in QuTiP and QuantumOptics.jl
-> I simply copied and reworked some of the code to work with dynamiqs.
+> This is a fork of the repo linked below, which implemented the benchmarks in QuTiP and QuantumOptics.jl
+> I copied a lot of the code and reorganized a lot of the code.
 > https://github.com/qojulia/QuantumOptics.jl-benchmarks
 
 
