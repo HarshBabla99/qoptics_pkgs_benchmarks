@@ -48,5 +48,5 @@ Every single benchmark file has more or less the same structure. A `setup` funct
 * `hardware_specs.py`: Collects information about hardware and used software and stores it in the results directory.
 * `plot_results-py`: Uses matplotlib to visualize the benchmark results stored in `results-collected`.
 * `make.sh`: Runs ``run_all.py`, `collect_results.py`, `extract_code.py`, 
-> [!NOTE]
+> [!WARNING]
 > TODO: `make.sh` should also run `hardware_specs.py` and copy all files of interest into the correct website directories.
