@@ -14,6 +14,7 @@
 module load miniconda
 conda activate qi_cuda
 
+cd src
 python run_all.py
 python collect_results.py
 python plot_results.py

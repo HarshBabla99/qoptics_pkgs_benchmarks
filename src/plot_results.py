@@ -34,11 +34,17 @@ for testname in testnames:
     data = transform_json(d)
     
     for name, points in data:
-        plt.title(testname)
+        #plt.title(testname)
         plt.plot(points[0], points[1], label=name)
         plt.plot(points[0], points[1], "ok", alpha=0.4)
+        
 
     plt.legend()
+
+    plt.xlabel('Hilbert space dimension')
+    plt.ylabel('Time [s]')
+    plt.yscale('log')
+    
     plt.savefig(f'../plots/{testname}.png')
     #plt.show()
     plt.clf()

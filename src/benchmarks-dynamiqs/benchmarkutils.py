@@ -93,14 +93,8 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
         # Set the backend
         dq.set_device(backend)
 
-        # If we are saving the states, then save the results to a different file
-        if save_states is not None:
-            if save_states:
-                curr_name = f'{name}(save_states)'
-            else:
-                curr_name = name
-        else:
-            curr_name = name
+        # Dummy variable for the name (will be modified by the backend, jit, etc.)
+        curr_name = name
 
         # To jit or not to jit, that is the question
         if jit_status:
@@ -110,6 +104,11 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
         else:
             f_to_run = f
             curr_name = f'{curr_name}[{backend}]'
+
+        # If we are saving the states, then save the results to a different file
+        if save_states is not None:
+            if save_states:
+                curr_name = f'{curr_name}(save_states)'
 
         # Now run this for various cutoffs
         for N in cutoffs:
