@@ -54,7 +54,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
               to_jit=False, is_time_evo = False):
     
     # Double precision
-    dq.set_precision('double')
+    # dq.set_precision('double')
 
     # Get the backends
     if xla_bridge.get_backend().platform == 'gpu':
@@ -93,15 +93,6 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
         # Set the backend
         dq.set_device(backend)
 
-        # If we are saving the states, then save the results to a different file
-        if save_states is not None:
-            if save_states:
-                curr_name = f'{name}(save_states)'
-            else:
-                curr_name = name
-        else:
-            curr_name = name
-
         # To jit or not to jit, that is the question
         if jit_status:
             f_to_run = jit(f, backend = backend)
@@ -110,6 +101,15 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
         else:
             f_to_run = f
             curr_name = f'{curr_name}[{backend}]'
+
+        # If we are saving the states, then save the results to a different file
+        if save_states is not None:
+            if save_states:
+                curr_name = f'{name}(save_states)'
+            else:
+                curr_name = name
+        else:
+            curr_name = name
 
         # Now run this for various cutoffs
         for N in cutoffs:
