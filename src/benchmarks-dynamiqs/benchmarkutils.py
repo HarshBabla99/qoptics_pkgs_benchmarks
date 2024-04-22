@@ -54,7 +54,7 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
               to_jit=False, is_time_evo = False):
     
     # Double precision
-    dq.set_precision('double')
+    # dq.set_precision('double')
 
     # Get the backends
     if xla_bridge.get_backend().platform == 'gpu':
@@ -109,6 +109,10 @@ def benchmark(name, f, setup, samples, evals, cutoffs, check_f, check_thresh=1e-
         if save_states is not None:
             if save_states:
                 curr_name = f'{curr_name}(save_states)'
+            else:
+                curr_name = name
+        else:
+            curr_name = name
 
         # Now run this for various cutoffs
         for N in cutoffs:
